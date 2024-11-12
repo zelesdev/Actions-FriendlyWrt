@@ -59,8 +59,9 @@ jobs:
         sudo rm -rf /usr/share/dotnet /usr/local/lib/android/sdk /usr/local/share/boost /opt/ghc
         echo "cores: $(nproc)"
 
-        - name: Download source
-      run: |
+         - name: Download source
+        run: |
+        mkdir project
         mkdir project
         cd project
         repo init --depth=1 -u https://github.com/zelesdev/friendlywrt_manifests -b master-v${{ matrix.VERSION }} \
